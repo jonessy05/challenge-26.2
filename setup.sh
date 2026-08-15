@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 # Richtet Docker, Compose und den Paper-26.2-Server in diesem Repo ein.
 # Nutzung auf Ubuntu:  git clone … && cd miecratdocker && ./setup.sh

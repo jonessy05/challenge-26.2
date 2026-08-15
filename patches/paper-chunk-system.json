@@ -1,23 +1,19 @@
 {
-  "patches": [
+  "file": "/data/config/paper-global.yml",
+  "ops": [
     {
-      "file": "/data/config/paper-global.yml",
-      "ops": [
-        {
-          "$set": {
-            "path": "$.chunk-system['worker-threads']",
-            "value": 4,
-            "value-type": "int"
-          }
-        },
-        {
-          "$set": {
-            "path": "$.chunk-system['io-threads']",
-            "value": 1,
-            "value-type": "int"
-          }
-        }
-      ]
+      "$set": {
+        "path": "$.chunk-system['worker-threads']",
+        "value": 4,
+        "value-type": "int"
+      }
+    },
+    {
+      "$set": {
+        "path": "$.chunk-system['io-threads']",
+        "value": 1,
+        "value-type": "int"
+      }
     }
   ]
 }
