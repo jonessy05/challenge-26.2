@@ -1,0 +1,27 @@
+
+services:
+  mc:
+    image: itzg/minecraft-server:java25
+    pull_policy: daily
+    container_name: minecraft-paper
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: PAPER
+      VERSION: "26.2"
+      PAPER_CHANNEL: default
+      MEMORY: "6G"
+      USE_MEOWICE_FLAGS: "true"
+      VIEW_DISTANCE: 32
+      SIMULATION_DISTANCE: 32
+      TZ: Europe/Berlin
+      PATCH_DEFINITIONS: /patches
+    volumes:
+      - ./data:/data
+      - ./patches:/patches:ro
+      - ./plugins:/plugins:ro
+    restart: unless-stopped
+    stop_grace_period: 1m
