@@ -11,7 +11,7 @@
 | Direkte Konsole (detach: Strg+P, Strg+Q)        | `docker compose attach mc`                  |
 | Stoppen (Welt speichern)                        | `docker compose stop`                       |
 | Starten                                         | `docker compose start`                      |
-| Nach Änderung an `compose.yaml`                 | `docker compose up -d`                      |
+| Nach Änderung an `compose.yaml` / `minecraft.env` | `docker compose up -d`                    |
 | Komplett neu starten                            | `docker compose restart`                    |
 | Container entfernen (Daten in `./data` bleiben) | `docker compose down`                       |
 

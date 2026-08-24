@@ -22,6 +22,22 @@ Das Skript:
 
 Sobald in den Logs **"Done"** steht, kannst du joinen.
 
+## Spiel-Einstellungen
+
+Defaults stehen in `minecraft.env` (Hardcore ist an). Nach dem Ändern:
+
+```bash
+docker compose up -d
+```
+
+Eine schon vorhandene Welt in `data/` übernimmt Hardcore nicht zuverlässig. Dann Welt löschen und neu generieren:
+
+```bash
+docker compose stop
+rm -rf data/world data/world_nether data/world_the_end
+docker compose up -d
+```
+
 ## Neue JARs später hinzufügen
 
 ```bash

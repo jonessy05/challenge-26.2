@@ -89,25 +89,28 @@ mkdir -p ~/minecraft-paper
 cd ~/minecraft-paper
 ```
 
-Diese Projektdateien dorthin kopieren, vor allem `compose.yaml`, `setup.sh`, `patches/` und `plugins/`. Oder einfach das Repo klonen und `./setup.sh` ausführen.
+Diese Projektdateien dorthin kopieren, vor allem `compose.yaml`, `minecraft.env`, `setup.sh`, `patches/` und `plugins/`. Oder einfach das Repo klonen und `./setup.sh` ausführen.
 
 ## 3. Konfiguration
 
-Die Datei `compose.yaml` enthält bereits die aktuelle Konfiguration:
+Die Datei `compose.yaml` enthält die Server-Infrastruktur:
 
 - Paper **26.2**
 - Image-Tag **java25**
 - Heap **6G**
-- View-/Simulation-Distance **32**
 - MeowIce-Flags
 - Chunk-System: **4 Worker-Threads**, **1 I/O-Thread** (wird beim Start in `data/config/paper-global.yml` gesetzt)
 - `stop_grace_period: 1m` (Welt wird beim Stop sauber gespeichert)
 - Daten persistieren unter `./data`
 
+Spiel-Einstellungen (Hardcore, Difficulty, View-Distance, MOTD, …) stehen in `minecraft.env`. Hardcore ist dort standardmäßig an. Nach Änderungen: `docker compose up -d`.
+
+Eine schon vorhandene Welt in `data/` übernimmt Hardcore nicht zuverlässig — dann `data/world` (und Nether/End) löschen und neu starten.
+
 Zum Bearbeiten auf der VM:
 
 ```bash
-nano compose.yaml
+nano minecraft.env
 ```
 
 Speichern: `Strg + O`, Enter, dann `Strg + X`.

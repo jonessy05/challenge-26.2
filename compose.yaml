@@ -8,6 +8,8 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+    env_file:
+      - minecraft.env
     environment:
       EULA: "TRUE"
       TYPE: PAPER
@@ -15,10 +17,9 @@ services:
       PAPER_CHANNEL: default
       MEMORY: "6G"
       USE_MEOWICE_FLAGS: "true"
-      VIEW_DISTANCE: 32
-      SIMULATION_DISTANCE: 32
       TZ: Europe/Berlin
       PATCH_DEFINITIONS: /patches
+      OVERRIDE_SERVER_PROPERTIES: "true"
     volumes:
       - ./data:/data
       - ./patches:/patches:ro
